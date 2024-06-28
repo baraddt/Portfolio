@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome To My Portfolio</title>
+  <link id="favicon" rel="shortcut icon" href="dist/img/f.png" />
+  <link href="dist/output.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jersey+15&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/feather-icons"></script>
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap");
+
+
+    body {
+      font-family: "Poppins", sans-serif;
+      --sb-track-color: #14b8a6;
+      --sb-thumb-color: #2e3233;
+      --sb-size: 10px;
+    }
+
+    body::-webkit-scrollbar {
+      width: var(--sb-size)
+    }
+
+    body::-webkit-scrollbar-track {
+      background: var(--sb-track-color);
+      border-radius: 6px;
+    }
+
+    body::-webkit-scrollbar-thumb {
+      background: var(--sb-thumb-color);
+      border-radius: 6px;
+
+    }
+
+    .font-zian {
+      font-family: "Jersey 15", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+
+
+    @supports not selector(::-webkit-scrollbar) {
+      body {
+        scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+      }
+    }
+
+    #transition {
+      transition: transform 0.9s ease-out-in;
+    }
+
+    #transition:hover {
+      transform: scale(1.1);
+    }
+
+    .transition {
+      transition: transform 0.9s ease-out-in;
+    }
+
+    .transition:hover {
+      transform: scale(1.1);
+    }
+
+    #bouncing-ball {
+      animation: bounce 3s infinite;
+    }
+
+    @keyframes bounce {
+
+      0%,
+      100% {
+        top: 0;
+      }
+
+      50% {
+        top: calc(4vh - 3px);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header Start -->
+  <header class="absolute top-0 left-0 z-10 flex w-full items-center bg-transparent">
+    <div class="container mx-auto max-w-screen-xl">
+      <div class="relative flex items-center justify-between">
+        <div class="px-5 font-zian">
+          <a href="https://www.linkedin.com/in/153220277/"
+            class="block py-6 lg:text-4xl text-primary"><span class="text-orange-500">Mubarad</span>'s Only</a>
+        </div>
+        <div class="flex items-center px-4">
+          <button id="hamburger" name="hamburger" type="button" class="absolute right-4 block lg:hidden">
+            <span class="hamburger-line origin-top-left transition duration-300 ease-in-out"></span>
+            <span class="hamburger-line transition duration-300 ease-in-out"></span>
+            <span class="hamburger-line origin-bottom-left transition duration-300 ease-in-out"></span>
+          </button>
+
+          <nav id="nav-menu"
+            class="absolute right-4 top-full hidden w-full max-w-[250px] rounded-lg bg-white py-5 shadow-lg dark:bg-dark dark:shadow-slate-500 lg:static lg:block lg:max-w-full lg:rounded-none lg:bg-transparent lg:shadow-none lg:dark:bg-transparent ">
+            <ul class="block lg:flex items-center justify-center">
+              <li class="group">
+                <a href="#home"
+                  class="mx-8 flex transition duration-700 ease-in-out scale-105 py-2 text-base text-dark group-hover:text-primary dark:text-white lg:mx-0">Home</a>
+              </li>
+              <li class="group">
+                <a href="#about"
+                  class="mx-8 flex transition duration-700 ease-in-out scale-105 py-2 text-base text-dark group-hover:text-primary dark:text-white lg:mx-0">About</a>
+              </li>
+              <li class="group">
+                <a href="#portfolio"
+                  class="mx-8 flex transition duration-700 ease-in-out scale-105 py-2 text-base text-dark group-hover:text-primary dark:text-white lg:mx-0">Portfolios</a>
+              </li>
+              <li class="group">
+                <a href="#blog"
+                  class="mx-8 flex transition duration-700 ease-in-out scale-105 py-2 text-base text-dark group-hover:text-primary dark:text-white lg:mx-0">Organitation</a>
+              </li>
+              <li class="group">
+                <a href="#contact"
+                  class="mx-8 flex transition duration-700 ease-in-out scale-105 py-2 text-base text-dark group-hover:text-primary dark:text-white lg:mx-0">Contact</a>
+              </li>
+              <li class="mt-3 flex items-center pl-8 lg:mt-0">
+                <div class="flex">
+                  <span class="mr-2 text-sm text-slate-500"><i data-feather="sun"></i></span>
+                  <input type="checkbox" class="hidden" id="dark-toggle" />
+                  <label for="dark-toggle">
+                    <div class="flex h-5 w-9 cursor-pointer items-center rounded-full bg-slate-500 p-1">
+                      <div class="toggle-circle h-4 w-4 rounded-full bg-white transition duration-500 ease-in-out">
+                      </div>
+                    </div>
+                  </label>
+                  <span class="ml-2 text-sm text-slate-500"><i data-feather="moon"></i></span>
+                </div>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- Header End -->
+
+  <!-- Hero Section Start -->
+  <section id="home" class="pb-32 pt-36 dark:bg-dark">
+    <div class="container">
+      <div class="flex flex-wrap">
+        <div class="w-full self-center px-4 lg:w-1/2">
+          <h1 class="font-semibold text-primary lg:text-4xl">
+            <div class="flex-row">
+              <p class="flex text-2xl">
+                <img class="mr-3 mb-3" width="30" src="dist/img/waving-hand.gif" alt="rad">
+                Hey,
+              </p>
+            </div>
+            <span class="mt-1 mb-4 block font-bold text-dark dark:text-white lg:text-5xl">I'm Mubarad <span
+                class="text-primary"></span><span class="text-primary dark:text-orange-600 lg:text-5xl"></span>
+            </span>
+          </h1>
+          <h2 class="mb-3 text-lg font-medium text-secondary lg:text-2xl">
+            I Focus on <span class="typing-text text-primary dark:text-orange-600"></span>
+          </h2>
+          <p class="mb-10 font-medium leading-relaxed text-secondary">
+            Learning web 🚀 programming is easy and fun,
+            <span class="font-bold text-dark dark:text-white"> right?!</span>
+          </p>
+          <a href="#portfolio"
+            class="rounded-lg shadow-md shadow-cyan-500/50 bg-primary py-3 px-8 text-base font-semibold text-gray-950 transition duration-700 ease-in-out">Look My Project</a>
+        </div>
+
+        <div class="w-full self-end px-4 lg:w-1/2 flex justify-center lg:justify-end">
+          <div class="relative mt-10 lg:mt-10">
+            <img id="bouncing-ball" width="300" src="dist/img/firstpic.jpg" alt="rad"
+              class="ml-auto border-double border-4 shadow-orange-500 border-orange-500 shadow-xl origin-top-left rotate-1 duration-1000 cursor-pointer hover:shadow-lg transition rounded-xl relative z-10 max-w-full lg:max-w-auto" />
+          </div>
+        </div>
+
+      </div>
+  </section>
+
+  <!-- Hero Section End -->
+
+  <!-- About Section Start -->
+  <section id="about" class="pt-36 pb-32 dark:bg-dark">
+    <div class="container">
+      <div class="flex flex-wrap">
+
+        <div class="w-full px-4 lg:w-1/2">
+          <h3 class="mb-4 text-2xl font-semibold text-dark dark:text-white lg:pt-10 lg:text-3xl">
+            Let's be friends
+          </h3>
+          <p class="mb-6 text-base font-medium text-secondary lg:text-lg">
+            <img id="bouncing-ball" width="255" src="dist/img/firstpic.jpg" class="opacity-20 shadow-primary shadow-lg hover:opacity-90 origin-bottom rotate-12 transition duration-500 border-double border-4 border-primary rounded-xl ml-20 mt-14 mb-14
+              " alt="">
+            Hello, my name is <span class="text-primary">Mubarad<span class="text-orange-500">Al-Ghyfari</span></span>, you
+            can call me Barad, I am <span class="text-primary">20 years old</span>, I live in Tasikmalaya, my hobbies
+            are playing games and singing
+            and Play Guitar. My favorite food is Mie Ayam. <span class="text-primary"> I feel happy now</span>.
+          </p>
+          <div class="flex items-center">
+
+            <!-- Instagram -->
+            <a href="https://instagram.com/raddhere" target="_blank"
+              class="mr-3 flex h-9 w-9 items-center justify-center rounded-lg border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"><i
+                data-feather="instagram"></i>
+            </a>
+
+            <!-- Twitter -->
+            <a href="https://twitter.com/librakun3" target="_blank"
+              class="mr-3 flex h-9 w-9 items-center justify-center rounded-lg border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"><i
+                data-feather="twitter"></i>
+            </a>
+
+            <!-- Github -->
+            <a href="https://github.com/baraddt" target="_blank"
+              class="mr-3 flex h-9 w-9 items-center justify-center rounded-lg border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"><i
+                data-feather="github"></i>
+            </a>
+
+            <!-- LinkedIn -->
+            <a href="https://linkedin.com/in/Mubarad Al Ghyfari" target="_blank"
+              class="mr-3 flex h-9 w-9 items-center justify-center rounded-lg border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"><i
+                data-feather="linkedin"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="mb-10 mt-5 w-full px-4 lg:w-1/2 lg:pr-24">
+          <h4 class="mb-10 text-lg font-bold uppercase text-primary">
+            About Me!
+          </h4>
+          <h2 class="mb-5 max-w-md text-3xl font-bold italic text-dark dark:text-white lg:text-4xl">
+            <span class="text-orange-500"></span>
+          </h2>
+          <p class="max-w-xl mb-3 text-base font-medium text-secondary lg:text-lg">
+            I, a fourth semester student at LP3I Tasikmalaya, am committed to majoring in web and mobile development. My main focus
+            at the moment is on Frontend and Backend, where I have explored some of the syntax of Javascript and PHP. Additionally,
+            I have knowledge of js for static website development and Laravel as a PHP framework. My experience in
+            Campus creating Many website and mobile projects. I understand
+            the importance of dedicated team collaboration to create innovative products that are not only useful but
+            also enhance the user experience.
+          </p>
+          <div class="mt-14">
+            <div class="mt-1 block flex-col lg:block dark:text-white text-1xl">
+              <p class="mb-1 lg:mb-0 px-2"><span class="text-primary font-bold">Age:</span> 20 Years Old</p>
+              <p class="mb-1 lg:mb-0 px-2"><span class="text-primary font-bold">Phone:</span> (+62) 896-6808-6914</p>
+            </div>
+            <div class="mt-3 block flex-col lg:block dark:text-white text-1xl">
+              <p class="mb-1 lg:mb-0 px-2"><span class="text-primary font-bold">Email:</span> mubaradalghyfari@gmail.com
+              </p>
+              <p class="mb-1 lg:mb-0 px-2"><span class="text-primary font-bold">Place:</span> Tasikmalaya, Indonesia - 26446
+              </p>
+              </p>
+              <p class="mb-1 lg:mb-0 px-2 py-2"><span class="text-primary font-bold">+++</span> MAN 2 CIAMIS
+              </p>
+              </p>
+              <p class="mb-1 lg:mb-0 px-2"><span class="text-primary font-bold">+++</span> LP3I TASIKMALAYA
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+  <!-- About Section End -->
+
+  <!-- Portfolio Section Start -->
+  <section id="portfolio" class="bg-slate-100 pt-36 pb-16 dark:bg-gray-950">
+    <div class="container">
+      <div class="w-full px-4">
+        <div class="mx-auto mb-16 max-w-xl text-center">
+          <h4 class="mb-2 text-lg font-semibold text-primary">Portfolio</h4>
+          <h2 class="mb-4 text-3xl font-bold text-dark dark:text-white sm:text-4xl lg:text-5xl">
+            Projects
+          </h2>
+          <p class="text-md font-medium text-slate-900 dark:text-white md:text-lg">
+            This project was my project while I was in Campus
+          </p>
+        </div>
+        <div class="flex justify-center items-center mb-6">
+          <button onclick="showProjects()" id="projects-btn"
+            class="rounded-lg shadow-md shadow-cyan-500/50 bg-primary py-3 px-9 text-base font-semibold text-gray-950 transition duration-700 ease-in-out mx-4 active">Projects</button>
+        </div>
+      </div>
+    </div>
+    <div id="projects" class="flex w-full flex-wrap justify-center px-4 xl:mx-auto xl:w-10/12">
+      <!-- Daftar proyek -->
+      <div class="mb-12 px-4 md:w-1/3">
+        <div class="bg-white dark:bg-slate-700 overflow-hidden rounded-xl shadow-md px-3">
+          <img class=" w-full h-40 object-cover object-center rounded-lg transition"
+            src="dist/img/portfolio/fooddata.png" alt="Web Statis PPLG Wikrama">
+          <div class="py-2 px-4">
+            <h3 class="text-sm italic dark:text-white text-secondary mb-2">List Any Data</h3>
+            <!-- <p class="text-sm text-white mb-4">
+              The landing page is the one I made during the material with the industry, making it with the VueJS
+              framework </p> -->
+            <div class="flex">
+              <img width="50" class="transition " src="dist/img/skils/html-5--v1.webp" alt="HTML">
+              <img width="50" class="transition " src="dist/img/skils/css3.webp" alt="CSS">
+              <img width="50" class="transition " src="dist/img/skils/bootstrap.webp" alt="Bootstrap">
+              <img width="50" class="transition " src="dist/img/skils/tailwindcss.webp" alt="Tailwind">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-12 px-4 md:w-1/3">
+        <div class="bg-white dark:bg-slate-700 overflow-hidden rounded-xl shadow-md px-3">
+          <img class=" w-full h-40 object-cover object-center rounded-lg transition"
+            src="dist/img/portfolio/figma.png" alt="Web Statis PPLG Wikrama">
+          <div class="py-2 px-4">
+            <h3 class="text-sm italic dark:text-white text-secondary mb-2">UI Mobile Cars App</h3>
+            <!-- <p class="text-sm text-white mb-4">
+              This is an e-commerce user interface that I created with my team, and it is still in progress
+            </p> -->
+            <div class="flex">
+              <img width="50" class="transition " src="dist/img/skils/figma.png" alt="Figma">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-12 px-4 md:w-1/3">
+        <div class="bg-white dark:bg-slate-700 overflow-hidden rounded-xl shadow-md px-3">
+          <img class=" w-full h-40 object-cover object-center rounded-lg transition"
+            src="dist/img/portfolio/ci3.png" alt="Web Statis PPLG Wikrama">
+          <div class="py-2 px-4">
+            <h3 class="text-sm italic dark:text-white text-secondary mb-2">CI4</h3>
+            <!-- <p class="text-sm text-white mb-4">
+              This crud is an mvc crud that I made when I was in eleventh grade, using the PHP programming language.
+            </p> -->
+            <div class="flex">
+              <img width="50" class="transition " src="dist/img/skils/html-5--v1.webp" alt="HTML">
+              <img width="50" class="transition " src="dist/img/skils/css3.webp" alt="CSS">
+              <img width="50" class="transition " src="dist/img/skils/php-logo.webp" alt="PHP">
+              <img width="50" class="transition " src="dist/img/skils/bootstrap.webp" alt="Bootstrap">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mb-12 px-4 md:w-1/3">
+        
+      </div>
+
+      <div class="mb-12 px-4 md:w-1/3">
+      </div>
+
+      <div class="mb-12 px-4 md:w-1/3">
+        
+      </div>
+    </div>
+    <div id="certificates" style="display: none;"
+      class="flex w-full flex-wrap justify-center px-4 xl:mx-auto xl:w-10/12">
+      <!-- Daftar sertifikat -->
+      <div class="mb-12 px-4 md:w-1/3">
+        <div class="bg-slate-500 dark:bg-slate-700 overflow-hidden rounded-xl shadow-md px-3">
+          <img class=" w-full h-40 object-cover object-center rounded-lg transition"
+            src="dist/img/certificate/Screenshot (918).png" alt="Web Statis PPLG Wikrama">
+          <div class="px-4 py-2">
+            <h3 class="text-sm italic text-white mb-2 ">Kursus Command Line</h3>
+          </div>
+        </div>
+      </div>
+      <div class="mb-12 px-4 md:w-1/3">
+        <div class="bg-slate-500 dark:bg-slate-700 overflow-hidden rounded-xl shadow-md px-3">
+          <img class=" w-full h-40 object-cover object-center rounded-lg transition"
+            src="dist/img/certificate/Screenshot (919).png" alt="Web Statis PPLG Wikrama">
+          <div class="px-4 py-2">
+            <h3 class="text-sm italic text-white mb-2">Kursus Git</h3>
+          </div>
+        </div>
+      </div>
+      <div class="mb-12 px-4 md:w-1/3">
+        <div class="bg-slate-500 dark:bg-slate-700 overflow-hidden rounded-xl shadow-md px-3">
+          <img class=" w-full h-40 object-cover object-center rounded-lg transition"
+            src="dist/img/certificate/Screenshot (920).png" alt="Web Statis PPLG Wikrama">
+          <div class="px-4 py-2">
+            <h3 class="text-sm italic text-white mb-2">Backend Development With JavaScript Framework
+            </h3>
+          </div>
+        </div>
+      </div>
+      <div class="mb-12 px-4 md:w-1/3">
+        <div class="bg-slate-500 dark:bg-slate-700 overflow-hidden rounded-xl shadow-md px-3">
+          <img class=" w-full h-40 object-cover object-center rounded-lg transition"
+            src="dist/img/certificate/Screenshot (921).png" alt="Web Statis PPLG Wikrama">
+          <div class="px-4 py-2">
+            <h3 class="text-sm italic text-white mb-2">Frontend Development With The Progressive
+              JavaScript
+              Framwork Vue.Js</h3>
+          </div>
+        </div>
+      </div>
+      <div class="mb-12 px-4 md:w-1/3">
+        <div class="bg-slate-500 dark:bg-slate-700 overflow-hidden rounded-xl shadow-md px-3">
+          <img class=" w-full h-40 object-cover object-center rounded-lg transition"
+            src="dist/img/certificate/Screenshot (922).png" alt="Web Statis PPLG Wikrama">
+          <div class="px-4 py-2">
+            <h3 class="text-sm italic text-white mb-2">Keselamatan dan Kesehehatan Kerja</h3>
+          </div>
+        </div>
+      </div>
+      <div class="mb-12 px-4 md:w-1/3">
+        <div class="bg-slate-500 dark:bg-slate-700 overflow-hidden rounded-xl shadow-md px-3">
+          <img class=" w-full h-40 object-cover object-center rounded-lg transition"
+            src="dist/img/certificate/Screenshot (923).png" alt="Web Statis PPLG Wikrama">
+          <div class="px-4 py-2">
+            <h3 class="text-sm italic text-white mb-2">Belajar Dasar Git dan Github</h3>
+          </div>
+        </div>
+      </div>
+      <div class="mb-12 px-4 md:w-1/3">
+        <div class="bg-slate-500 dark:bg-slate-700 overflow-hidden rounded-xl shadow-md px-3">
+          <img class=" w-full h-40 object-cover object-center rounded-lg transition"
+            src="dist/img/certificate/Screenshot (924).png" alt="Web Statis PPLG Wikrama">
+          <div class="px-4 py-2">
+            <h3 class="text-sm italic text-white mb-2">Belajar Dasar Structured Query Language (SQL)
+            </h3>
+          </div>
+        </div>
+      </div>
+      <div class="mb-12 px-4 md:w-1/3">
+        <div class="bg-slate-500 dark:bg-slate-700 overflow-hidden rounded-xl shadow-md px-3">
+          <img class=" w-full h-40 object-cover object-center rounded-lg transition"
+            src="dist/img/certificate/Screenshot (925).png" alt="Web Statis PPLG Wikrama">
+          <div class="px-4 py-2">
+            <h3 class="text-sm italic text-white mb-2">Belajar Membuat Front-End Web Untuk Pemula
+            </h3>
+          </div>
+        </div>
+      </div>
+      <div class="mb-12 px-4 md:w-1/3">
+        <div class="bg-slate-500 dark:bg-slate-700 overflow-hidden rounded-xl shadow-md px-3">
+          <img class=" w-full h-40 object-cover object-center rounded-lg transition"
+            src="dist/img/certificate/Screenshot (926).png" alt="Web Statis PPLG Wikrama">
+          <div class="px-4 py-2">
+            <h3 class="text-sm italic text-white mb-2">Belajar Dasar Pemrograman Web</h3>
+          </div>
+        </div>
+      </div>
+      <div class="mb-12 px-4 md:w-1/3">
+        <div class="bg-slate-500 dark:bg-slate-700 overflow-hidden rounded-xl shadow-md px-3">
+          <img class=" w-full h-40 object-cover object-center rounded-lg transition"
+            src="dist/img/certificate/Screenshot (927).png" alt="Web Statis PPLG Wikrama">
+          <div class="px-4 py-2">
+            <h3 class="text-sm italic text-white mb-2">Memulai Dasar Pemrograman untuk Menjadi
+              Pengembang
+              Software</h3>
+          </div>
+        </div>
+      </div>
+      <div class="mb-12 px-4 md:w-1/3">
+        <div class="bg-slate-500 dark:bg-slate-700 overflow-hidden rounded-xl shadow-md px-3">
+          <img class=" w-full h-40 object-cover object-center rounded-lg transition"
+            src="dist/img/certificate/Screenshot (928).png" alt="Web Statis PPLG Wikrama">
+          <div class="px-4 py-2">
+            <h3 class="text-sm italic text-white mb-2">Memulai Pemrograman Dengan Java</h3>
+          </div>
+        </div>
+      </div>
+      <div class="mb-12 px-4 md:w-1/3">
+        <div class="bg-slate-500 dark:bg-slate-700 overflow-hidden rounded-xl shadow-md px-3">
+          <img class=" w-full h-40 object-cover object-center rounded-lg transition"
+            src="dist/img/certificate/Screenshot (929).png" alt="Web Statis PPLG Wikrama">
+          <div class="px-4 py-2">
+            <h3 class="text-sm italic text-white mb-2">Meneliti Karier sebagai Software Developer
+            </h3>
+          </div>
+        </div>
+      </div>
+      <div class="mb-12 px-4 md:w-1/3">
+        <div class="bg-slate-500 dark:bg-slate-700 overflow-hidden rounded-xl shadow-md px-3">
+          <img class=" w-full h-40 object-cover object-center rounded-lg transition"
+            src="dist/img/certificate/Screenshot (930).png" alt="Web Statis PPLG Wikrama">
+          <div class="px-4 py-2">
+            <h3 class="text-sm italic text-white mb-2">Pengenalan ke Logika Pemrograman (Programming
+              logic 101)
+            </h3>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- Portfolio Section End -->
+
+  <!-- Skils Section Start -->
+  
+  <!-- Clients Section End -->
+
+  <!-- Blog Section Start -->
+  <section id="blog" class="bg-slate-100 pt-36 pb-32 dark:bg-dark">
+    <div class="container">
+      <div class="w-full px-4">
+        <div class="mx-auto mb-16 max-w-xl text-center">
+          <h4 class="mb-2 text-lg font-semibold text-primary">Expernc</h4>
+          <h2 class="mb-4 text-3xl font-bold text-slate-950 dark:text-white sm:text-4xl lg:text-5xl">
+            Organitaion
+          </h2>
+          <p class="text-md font-medium dark:text-white md:text-lg">
+            These are some of my organizational experiences.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap">
+        <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
+          <div class="mb-10 overflow-hidden rounded-xl bg-white shadow-lg dark:bg-gray-950">
+            <img src="dist/img/blog/pic4.jpg" alt="#" class="w-full transition"/>
+            <div class="py-8 px-6">
+              <h3>
+                <a href="#"
+                  class="mb-3 block truncate text-xl font-semibold text-dark hover:text-primary dark:text-white">Amazing March</a>
+              </h3>
+              <p class="mb-6 text-base font-medium text-secondary">
+                preparing events for competitions during the amazing march.</p>
+              <a href="#"
+                class="rounded-lg bg-primary py-2 px-4 text-sm font-medium text-white hover:opacity-80">See More</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
+          <div class="mb-10 overflow-hidden rounded-xl bg-white shadow-lg dark:bg-gray-950">
+            <img src="dist/img/blog/pic5.jpg" alt="Programming" class="w-full transition" />
+            <div class="py-8 px-6">
+              <h3>
+                <a href="#"
+                  class="mb-3 block truncate text-xl font-semibold text-dark hover:text-primary dark:text-white">Show LIAC</a>
+              </h3>
+              <p class="mb-6 text-base font-medium text-secondary">
+                sang several songs during the LP3I Volleyball Cup.
+              </p>
+              <a href="#"
+                class="rounded-lg bg-primary py-2 px-4 text-sm font-medium text-white hover:opacity-80">See More</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
+          <div class="mb-10 overflow-hidden rounded-xl bg-white shadow-lg dark:bg-gray-950">
+            <img src="dist/img/blog/pic6.jpg" alt="Mechanical Keyboard" class="w-full transition" />
+            <div class="py-8 px-6">
+              <h3>
+                <a href="#"
+                  class="mb-3 block truncate text-xl font-semibold text-dark hover:text-primary dark:text-white">Choir LIAC</a>
+              </h3>
+              <p class="mb-6 text-base font-medium text-secondary">
+                guiding the 2023 pkkmb participants to sing in the field during the opening ceremony
+              </p>
+              <a href="#"
+                class="rounded-lg bg-primary py-2 px-4 text-sm font-medium text-white hover:opacity-80">See More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Blog Section End -->
+
+  <!-- Contact Section Start -->
+  <section id="contact" class="pt-36 pb-32 dark:bg-gray-950">
+    <div class="container">
+      <div class="w-full px-4">
+        <div class="mx-auto mb-16 max-w-xl text-center">
+          <h4 class="mb-2 text-lg font-semibold text-primary">Get In Touch</h4>
+          <h2 class="mb-4 text-3xl font-bold text-dark dark:text-white sm:text-4xl lg:text-5xl">
+            Contact Me
+          </h2>
+          <p class="text-md font-medium text-secondary md:text-lg">
+            Contact me if you need me
+          </p>
+        </div>
+      </div>
+      <div class="container flex flex-col lg:flex-row justify-center items-center">
+        <div class="lg:w-1/2 mb-10 lg:mb-0 lg:mr-10 w-full lg:max-w-sm order-last lg:order-first">
+          <img src="dist/img/cntct.png" alt="" class="w-full h-auto">
+        </div>
+        <form class="w-full lg:w-1/2 order-first lg:order-last">
+          <div class="mb-6">
+            <label for="name" class="text-base font-bold text-primary">Nama</label>
+            <input type="text" id="name"
+              class="w-full rounded-md bg-gray-600 dark:backdrop-blur-sm dark:bg-white/10 p-3 text-dark focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" />
+          </div>
+          <div class="mb-6">
+            <label for="email" class="text-base font-bold text-primary">Email</label>
+            <input type="email" id="email"
+              class="w-full rounded-md bg-gray-600 dark:backdrop-blur-sm dark:bg-white/10 p-3 text-dark focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" />
+          </div>
+          <div class="mb-6">
+            <label for="message" class="text-base font-bold text-primary">Pesan</label>
+            <textarea id="message"
+              class="h-32 w-full rounded-md bg-gray-600 dark:backdrop-blur-sm dark:bg-white/10 p-3 text-dark focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"></textarea>
+          </div>
+          <div>
+            <button
+              class="w-full rounded-lg bg-primary py-3 px-8 text-base font-semibold text-white duration-500 hover:opacity-80 hover:shadow-lg">
+              Kirim
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+  <!-- Contact Section End -->
+
+  <!-- Footer Start -->
+  <footer class="bg-dark pt-24 pb-12">
+    <div class="container">
+      <div class="flex flex-wrap">
+        <div class="mb-12 w-full px-4 font-medium text-slate-300 md:w-1/3">
+          <h2 class="mb-5 text-4xl font-bold text-white">Mubarad</h2>
+          <h3 class="mb-2 text-2xl font-bold">Contact Me</h3>
+          <p>mubaradalghyfari@gmail.com</p>
+          <p>Jalan Raya Singaparna, Kec. Singaparna Kabupaten Tasikmalaya, Jawa Barat, Indonesia</p>
+          <p>Tasikmalaya</p>
+        </div>
+        <div class="mb-12 w-full px-4 md:w-1/3">
+          <h3 class="mb-5 text-xl font-semibold text-white">
+            Contact Info
+          </h3>
+          <ul class="text-slate-300">
+            <li>
+              <a href="https://wa.me/6289668086914" class="mb-3  flex flex-row text-base hover:text-primary"> <i
+                  class="mr-3" data-feather="phone"></i>WhatsApp Me</a>
+            </li>
+            <li>
+              <a href="#"
+                class="mb-3  flex flex-row text-base hover:text-primary"> <i class="mr-3" data-feather="mail"></i>
+                mubaradalghyfari@gmail.com</a>
+            </li>
+            <li>
+              <a href="#"
+                class="mb-3  flex flex-row text-base hover:text-primary"> <i class="mr-3" data-feather="map-pin"></i>
+                Rancabungur,Tasik, Indonesia - 26446</a>
+            </li>
+          </ul>
+        </div>
+        <div class="mb-12 w-full px-4 md:w-1/3">
+          <h3 class="mb-5 text-xl font-semibold text-white">Quick Links</h3>
+          <ul class="text-slate-300">
+            <li>
+              <a href="#home" class="mb-3 inline-block text-base hover:text-primary">Home</a>
+            </li>
+            <li>
+              <a href="#about" class="mb-3 inline-block text-base hover:text-primary">About Me</a>
+            </li>
+            <li>
+              <a href="#portfolio" class="mb-3 inline-block text-base hover:text-primary">Portfolios</a>
+            </li>
+            <li>
+              <a href="#blog" class="mb-3 inline-block text-base hover:text-primary">Organitation</a>
+            </li>
+            <li>
+              <a href="#contact" class="mb-3 inline-block text-base hover:text-primary">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="w-full border-t border-slate-700 pt-10">
+        <div class="mb-5 flex items-center justify-center">
+
+          <!-- Instagram -->
+          <a href="https://instagram.com/raddhere" target="_blank"
+            class="mr-3 flex h-9 w-9 items-center justify-center rounded-lg border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"><i
+              data-feather="instagram"></i>
+          </a>
+
+          <!-- Twitter -->
+          <a href="https://twitter.com/librakun3" target="_blank"
+            class="mr-3 flex h-9 w-9 items-center justify-center rounded-lg border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"><i
+              data-feather="twitter"></i>
+          </a>
+
+          <!-- Github -->
+          <a href="https://github.com/baraddt" target="_blank"
+            class="mr-3 flex h-9 w-9 items-center justify-center rounded-lg border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"><i
+              data-feather="github"></i>
+          </a>
+
+          <!-- LinkedIn -->
+          <a href="https://linkedin.com/in/Mubarad Al Ghyfari" target="_blank"
+            class="mr-3 flex h-9 w-9 items-center justify-center rounded-lg border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"><i
+              data-feather="linkedin"></i>
+          </a>
+        </div>
+        <p class="text-center text-xs font-medium text-slate-500">
+          Edited<span class="text-pink-500">❤️</span> By
+          <a href="https://instagram.com/raddhere target="_blank" class="font-bold text-primary">Mubarad</a>, use
+          <a href="https://tailwindcss.com" target="_blank" class="font-bold text-sky-500">Tailwind CSS</a>.
+        </p>
+      </div>
+    </div>
+  </footer>
+  <!-- Footer End -->
+
+  <!-- Back to top Start -->
+  <a href="#home"
+    class="fixed bottom-4 right-4 z-[9999] hidden h-14 w-14 items-center justify-center rounded-full bg-primary p-4 hover:animate-pulse"
+    id="to-top">
+    <span class="mt-2 block h-5 w-5 rotate-45 border-t-2 border-l-2"></span>
+  </a>
+  <!-- Back to top End -->
+
+  <script src="dist/js/script.js"></script>
+  <script>
+    feather.replace();
+  </script>
+</body>
+
+</html>
